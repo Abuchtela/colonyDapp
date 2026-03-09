@@ -57,7 +57,8 @@ const HookedTokenIcon = ({
   token: { iconHash, address },
   iconName,
   dontFetch = DEFAULT_NETWORK !== Network.Mainnet &&
-    DEFAULT_NETWORK !== Network.Xdai,
+    DEFAULT_NETWORK !== Network.Xdai &&
+    DEFAULT_NETWORK !== Network.XdaiFork,
   ...props
 }: Props) => {
   const [tokenImage, setTokenImage] = useState<string | undefined>();

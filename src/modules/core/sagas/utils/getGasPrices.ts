@@ -67,8 +67,8 @@ const fetchGasPrices = async (
       response = await fetch(XDAI_GAS_STATION);
     }
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
+    if (!response || !response.ok) {
+      throw new Error(response ? response.statusText : 'No gas price API available for this network');
     }
 
     if (DEFAULT_NETWORK === Network.Mainnet) {
