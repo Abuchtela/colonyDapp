@@ -67,8 +67,8 @@ const fetchGasPrices = async (
       response = await fetch(XDAI_GAS_STATION);
     }
 
-    if (!response.ok) {
-      throw new Error(response.statusText);
+    if (!response || !response.ok) {
+      throw new Error(response ? response.statusText : 'No response from gas station');
     }
 
     if (DEFAULT_NETWORK === Network.Mainnet) {
