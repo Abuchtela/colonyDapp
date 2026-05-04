@@ -21,6 +21,7 @@ const getTokenList = (): AnyToken[] => {
     case Network.Goerli:
       return goerliTokenList.map(checksumAddresses);
     case Network.Xdai:
+    case Network.XdaiFork:
       return xdaiTokenList.map(checksumAddresses);
     default:
       return [];
