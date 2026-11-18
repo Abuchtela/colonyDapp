@@ -76,9 +76,9 @@ export const GNOSIS_NETWORK: NetworkInfo = {
   shortName: 'xDai',
   displayENSDomain: 'joincolony.colonyxdai',
   blockExplorerName: 'Blockscout',
-  blockExplorerUrl: 'https://blockscout.com/poa/xdai',
-  tokenExplorerLink: 'https://blockscout.com/poa/xdai/tokens',
-  contractAddressLink: 'https://blockscout.com/poa/xdai/address',
+  blockExplorerUrl: 'https://blockscout.com/xdai/mainnet',
+  tokenExplorerLink: 'https://blockscout.com/xdai/mainnet/tokens',
+  contractAddressLink: 'https://blockscout.com/xdai/mainnet/address',
   rpcUrl: 'https://rpc.gnosischain.com',
 };
 

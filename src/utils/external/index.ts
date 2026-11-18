@@ -38,7 +38,7 @@ export const getEthToUsd = (ethValue: BigNumber): Promise<number | void> => {
   /**
    * Since the xDai token is "stable", it will always have parity to 1 USD
    */
-  if (DEFAULT_NETWORK === Network.Xdai) {
+  if (DEFAULT_NETWORK === Network.Xdai || DEFAULT_NETWORK === Network.XdaiFork) {
     return new Promise((resolve) => {
       localStorage.setItem(ETH_USD_KEY, '1');
       localStorage.setItem(ETH_USD_TIMESTAMP_KEY, currentTimestamp.toString());
@@ -95,13 +95,9 @@ export const getBlockExplorerLink = ({
   if (network === Network.Local) {
     return '#';
   }
-  if (network === Network.Xdai) {
+  if (network === Network.Xdai || network === Network.XdaiFork) {
     const xdaiLinkType = linkType === 'token' ? 'address' : linkType;
-    /**
-     * Using a network string template here since in the future we might wanna
-     * support xdai's test networks as well (eg: sokol)
-     */
-    return `https://blockscout.com/poa/${network}/${xdaiLinkType}/${addressOrHash}`;
+    return `https://blockscout.com/xdai/mainnet/${xdaiLinkType}/${addressOrHash}`;
   }
   const tld = network === 'tobalaba' ? 'com' : 'io';
   const networkSubdomain =

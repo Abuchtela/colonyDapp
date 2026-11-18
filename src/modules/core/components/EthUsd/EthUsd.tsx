@@ -84,7 +84,7 @@ const EthUsd = ({
     };
   }, [unit, value]);
 
-  if (DEFAULT_NETWORK === Network.Xdai) {
+  if (DEFAULT_NETWORK === Network.Xdai || DEFAULT_NETWORK === Network.XdaiFork) {
     return null;
   }
 
